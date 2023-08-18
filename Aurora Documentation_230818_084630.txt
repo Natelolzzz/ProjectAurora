@@ -1,0 +1,156 @@
+# Aurora Assembly Language Documentation
+
+## Introduction
+
+Welcome to the Aurora Assembly Language! Aurora is a versatile assembly language designed to harness the full power of your computer's processing unit. With Aurora, you can craft efficient and dynamic programs that control the hardware directly. This documentation serves as your guide to mastering the Aurora Assembly Language. The Aurora system has 3 Registers (A,B,C), 8KBS of ROM, and 8kbs of ram after it
+
+## Table of Contents
+
+1. [Getting Started](#getting-started)
+2. [Instructions](#instructions)
+   - [NOP - No-Operation](#nop---no-operation)
+   - [LIA - Load Immediate into Register A](#lia---load-immediate-into-register-a)
+   - [ADD - Add Registers A and B](#add---add-registers-a-and-b)
+   - [STC - Store Register C into Memory](#stc---store-register-c-into-memory)
+   - [LDA - Load Memory into Register A](#lda---load-memory-into-register-a)
+   - [STA - Store Register A into Memory](#sta---store-register-a-into-memory)
+   - [LDB - Load Memory into Register B](#ldb---load-memory-into-register-b)
+   - [JZ - Jump if Zero](#jz---jump-if-zero)
+   - [JC - Jump if Carry](#jc---jump-if-carry)
+   - [SZ - Set Zero Flag](#sz---set-zero-flag)
+   - [CZ - Clear Zero Flag](#cz---clear-zero-flag)
+   - [... (More Instructions)](#more-instructions)
+3. [Labels and Control Flow](#labels-and-control-flow)
+4. [Error Handling](#error-handling)
+5. [Examples](#examples)
+
+## Getting Started
+
+Aurora Assembly Language provides a low-level interface to control your computer's hardware directly. To start programming in Aurora, you'll need:
+
+- A text editor to write your Aurora Assembly code.
+- An assembler to convert your code into machine code.
+
+## Instructions
+
+Aurora Assembly Language consists of a variety of instructions, each with its own unique functionality. Let's dive into some of the key instructions:
+
+### NOP - No-Operation
+
+The NOP instruction does nothing. It simply advances the program counter to the next instruction. Use it for padding or alignment.
+
+```assembly
+NOP
+```
+
+### LIA - Load Immediate into Register A
+
+The LIA instruction loads an immediate value into Register A.
+
+```assembly
+LIA 10
+```
+
+### ADD - Add Registers A and B
+
+The ADD instruction adds the values in Registers A and B, storing the result in Register C. If the sum exceeds 255, the carry flag is set.
+
+```assembly
+ADD B
+```
+
+### STC - Store Register C into Memory
+
+The STC instruction stores the value from Register C into memory at an absolute address.
+
+```assembly
+STC 0x02
+```
+
+### LDA - Load Memory into Register A
+
+The LDA instruction loads a value from memory into Register A.
+
+```assembly
+LDA 0x0F
+```
+
+### STA - Store Register A into Memory
+
+The STA instruction stores the value from Register A into memory at an address specified by Register B.
+
+```assembly
+STA B
+```
+
+### LDB - Load Memory into Register B
+
+The LDB instruction loads a value from memory into Register B.
+
+```assembly
+LDB 0x0A
+```
+
+### JZ - Jump if Zero
+
+The JZ instruction performs a conditional jump to a specified offset if the zero flag is set.
+
+```assembly
+JZ 5
+```
+
+### JC - Jump if Carry
+
+The JC instruction performs a conditional jump to a specified offset if the carry flag is set.
+
+```assembly
+JC -3
+```
+
+### SZ - Set Zero Flag
+
+The SZ instruction sets the zero flag if the value in Register A is zero.
+
+```assembly
+SZ
+```
+
+### CZ - Clear Zero Flag
+
+The CZ instruction clears the zero flag.
+
+```assembly
+CZ
+```
+
+### More Instructions
+
+Explore the full range of Aurora instructions in the official Aurora Assembly Language reference.
+
+## Labels and Control Flow
+
+Aurora Assembly Language supports labels, enabling you to create descriptive markers for specific addresses in your code. Use labels for more organized control flow and easier navigation.
+
+```assembly
+start:
+    LIA 5
+    ADD B
+    JZ end
+    -- ... more code
+end:
+    CZ
+```
+
+## Error Handling
+
+Aurora Assembly Language ensures proper error handling to help you write robust programs. If an invalid opcode is encountered, an error message will be displayed, guiding you to rectify the issue.
+
+## Examples
+
+Explore the included examples to gain a deeper understanding of Aurora Assembly Language's capabilities and usage patterns.
+
+---
+
+Aurora Assembly Language - Control Your Computer's Destiny!
+
+**Note**: This documentation is provided for historical and educational purposes. Aurora Assembly Language is no longer actively developed or maintained. Please refer to modern documentation for current programming practices.
